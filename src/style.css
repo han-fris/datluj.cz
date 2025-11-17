@@ -6,10 +6,31 @@
 
 html {
   font-family: 'Open Sans', sans-serif;
+  height:100%;
+   margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+}
+
+body {
+  background-image: url('/datel_a_datlici.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+ 
 }
 
 .container {
-  width: 720px;
   margin-right: auto;
   margin-left: auto;
+  box-sizing: border-box;    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;       
+  min-height: 100vh;
+  padding: 20px; 
 }

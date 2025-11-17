@@ -1,13 +1,41 @@
 .stage {
-  height: 340px;
-  padding: 32px;
-  margin: 32px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 20px;
   background-color: #efefef;
   border-radius: 8px;
+  width: 330px
 }
 
+h1{
+  margin: 10px 0;
+}
+.stage__select {
+  text-align: center;
+}
+
+
+input[type=range] {
+accent-color: rgb(10, 1, 1);
+padding: 5px;
+}
+
+.stage__letters {
+  margin: 0;
+}
+.stage__select {
+  margin-bottom: 20px;
+}
 .stage__mistakes {
   text-align: center;
+  color: red
+}
+
+.stage__correct {
+  text-align: center;
+  color: green;
   margin-bottom: 64px;
 }
 
@@ -16,4 +44,5 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  flex-direction: column
 }

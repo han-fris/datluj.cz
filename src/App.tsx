@@ -3,7 +3,7 @@ import Stage from './components/Stage';
 const App: React.FC = () => {
   return (
     <div className="container">
-      <h1>Datlování</h1>
+      
       <Stage />
     </div>
   );

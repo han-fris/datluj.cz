@@ -7,7 +7,12 @@ interface IWordboxProp {
   active: boolean;
   onMistake: () => void;
 }
-const Wordbox: React.FC<IWordboxProp> = ({ word, onFinish, active, onMistake }) => {
+const Wordbox: React.FC<IWordboxProp> = ({
+  word,
+  onFinish,
+  active,
+  onMistake,
+}) => {
   const [lettersLeft, setLettersLeft] = useState<string>(word);
   const [mistake, setMistake] = useState<boolean>(false);
 
@@ -20,9 +25,10 @@ const Wordbox: React.FC<IWordboxProp> = ({ word, onFinish, active, onMistake }) 
     if (!active) return;
 
     const handleKeyUp = (e: KeyboardEvent) => {
+ 
       const key = e.key.toLowerCase();
 
-       if (!lettersLeft || lettersLeft.length === 0) return;
+      if (!lettersLeft || lettersLeft.length === 0) return;
 
       if (key === lettersLeft[0]) {
         setMistake(false);
@@ -34,7 +40,7 @@ const Wordbox: React.FC<IWordboxProp> = ({ word, onFinish, active, onMistake }) 
         setLettersLeft((x) => x.slice(1));
       } else {
         setMistake(true);
-        onMistake()
+        onMistake();
       }
     };
 
@@ -43,12 +49,12 @@ const Wordbox: React.FC<IWordboxProp> = ({ word, onFinish, active, onMistake }) 
     return () => {
       document.removeEventListener('keyup', handleKeyUp);
     };
-  }, [lettersLeft, active, onFinish]);
+  }, [lettersLeft, active, onFinish, onMistake]);
 
   return (
-    <div className={mistake ? 'wordbox wordbox--mistake' : 'wordbox'}>
-      {lettersLeft}
-    </div>
+   <div className={`wordbox ${active ? 'wordbox--active' : ''} ${mistake ? 'wordbox--mistake' : ''}`}>
+  {lettersLeft}
+</div>
   );
 };
 

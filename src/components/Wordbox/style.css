@@ -13,7 +13,22 @@
   z-index: 1;
 }
 
+.wordbox--active
+{
+    border: 2px solid #8fb935;
+  background-color: #8fb93558;
+}
+
 .wordbox--mistake {
-  background-color: #e64747;
-  color: white;
+ background-color: rgba(140, 69, 69, 0.344);
+  animation: shake 0.2s;
+}
+
+
+@keyframes shake {
+  0% { transform: translateX(0) }
+ 25% { transform: translateX(5px) }
+ 50% { transform: translateX(-5px) }
+ 75% { transform: translateX(5px) }
+ 100% { transform: translateX(0) }
 }
